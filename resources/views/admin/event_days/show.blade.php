@@ -25,7 +25,7 @@
                         </x-modal>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
-                        <div class="container">
+                        <div class="mx-4">
                             @foreach ($events as $event)
                                 <div class="card">
                                     <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
