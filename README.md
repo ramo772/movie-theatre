@@ -1,4 +1,4 @@
-# Orcas-Task
+# Movie-Theatre
 
 # Getting started
 
