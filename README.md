@@ -15,7 +15,7 @@ Switch to the repo folder
 Install all the dependencies 
 
     composer install
-
+    npm install
 
 Copy the example env file and make the required configuration changes in the .env file
 
