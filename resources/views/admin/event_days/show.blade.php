@@ -53,7 +53,6 @@
                                         @include('admin.forms.edit-event')
                                     </x-slot>
                                 </x-modal>
-
                                 <x-modal-delete id="delete-modal-{{ $event->id }}" method="delete"
                                     action="{{ route('event.destroy', ['event' => $event->id]) }}">
                                     <x-slot name="header">you will delete this Event , Are
@@ -62,9 +61,7 @@
                                     <x-slot name="body">
                                     </x-slot>
                                 </x-modal-delete>
-
                             @endforeach
-
                         </div>
                     </div>
                 </div>

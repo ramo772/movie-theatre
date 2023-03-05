@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\DayMovieTime;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,12 @@ class AttendeeFactory extends Factory
      */
     public function definition()
     {
+        $event_id = DayMovieTime::inRandomOrder()->implode('id');
         return [
-            //
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'mobile' => $this->faker->phoneNumber,
+            'day_movie_times_id' => $event_id[0]
         ];
     }
 }

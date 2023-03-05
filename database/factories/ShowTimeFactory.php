@@ -17,7 +17,6 @@ class ShowTimeFactory extends Factory
     public function definition()
     {
         return [
-            //
         ];
     }
 }

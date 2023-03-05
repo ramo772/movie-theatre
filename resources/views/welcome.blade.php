@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="Logo.png">
 
     <title>Beyond Cinema</title>
 
@@ -400,16 +401,19 @@
     @include('_includes.errors')
 
     <div class="relative min-h-screen   sm:items-center py-4 sm:pt-0">
+
+
         @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+            <div class="d-flex justify-content-end px-6 py-4 sm:block">
                 @auth
                     <a href="{{ url('/dashboard') }}"
                         class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                 @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                    <a href="{{ route('login') }}"
+                        class="btn btn-primary btn-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}"
-                            class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            class="btn btn-primary btn-sm ml-4 text-gray-700 dark:text-gray-500 underline">Register</a>
                     @endif
                 @endauth
             </div>
@@ -451,7 +455,7 @@
                         for (const x of res) {
                             $(`#sel_time-${movie_id}`).append(
                                 `<option value="${x['id']}">${x['start_at']}-${x['end_at']}</option>`
-                                )
+                            )
                         }
                     }
                 })

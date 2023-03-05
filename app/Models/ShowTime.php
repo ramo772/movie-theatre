@@ -10,11 +10,7 @@ class ShowTime extends Model
     use HasFactory;
     protected $fillable = ['start_at','end_at'];
 
-/**
- * The days that belong to the ShowTime
- *
- * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
- */
+
 public function days()
 {
     return $this->belongsToMany(Day::class, 'day_movie_times', 'show_time_id', 'day_id');

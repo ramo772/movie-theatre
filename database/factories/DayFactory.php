@@ -18,7 +18,7 @@ class DayFactory extends Factory
     public function definition()
     {
         return [
-
+            'day'=>$this->faker->dateTimeBetween('now', '+300 days'),
         ];
     }
 }

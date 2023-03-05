@@ -9,17 +9,11 @@ class DayMovieTime extends Model
 {
     use HasFactory;
     protected $fillable = ['day_id', 'movie_id', 'show_time_id'];
-
     public function show_time()
     {
         return $this->belongsTo(ShowTime::class, 'show_time_id');
     }
 
-    /**
-     * Get the day that owns the DayMovieTime
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
     public function day()
     {
         return $this->belongsTo(Day::class, 'day_id');

@@ -10,7 +10,8 @@
                             <div>
                                 <h5 class="mb-0">All movies</h5>
                             </div>
-                            <x-button-add button class=" btn-primary " type="button" data-bs-toggle="modal" data-bs-target="#create-modal">
+                            <x-button-add button class=" btn-primary " type="button" data-bs-toggle="modal"
+                                data-bs-target="#create-modal">
                                 Add New Movie
                             </x-button-add>
                         </div>
@@ -52,17 +53,30 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{ $row->name }}</p>
                                             </td>
                                             <td class="ps-4">
-                                                <img width="65"  class="zoom" src="{{ $row->image }}">
+                                                <img width="65" class="zoom" src="{{ $row->image }}">
                                             </td>
                                             <td class="text-center">
-                                                <a class="fas fa-pencil text-secondary" type="button" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-modal-{{ $row->id }}">
+                                                <a class="fas fa-eye text-secondary" type="button" data-bs-toggle="modal"
+                                                    data-bs-target="#show-modal-{{ $row->id }}">
+                                                </a>
+
+                                                <a class="fas fa-pencil text-secondary" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#edit-modal-{{ $row->id }}">
                                                 </a>
                                                 <a class="fas fa-trash text-secondary" type="button" data-bs-toggle="modal"
                                                     data-bs-target="#delete-modal-{{ $row->id }}" data-url=""></a>
                                             </td>
-                                            <x-modal id="edit-modal-{{ $row->id }}" method="put" action="{{ route('movie.update',$row->id) }}">
-                                                <x-slot name="header">Edit {{$row->name}} movie</x-slot>
+                                            <x-modal-show id="show-modal-{{ $row->id }}" method="put"
+                                                action="{{ route('movie.update', $row->id) }}">
+                                                <x-slot name="header"> {{ $row->name }} Movie Events</x-slot>
+                                                <x-slot name="body">
+                                                    @include('admin.forms.show-movie')
+                                                </x-slot>
+                                            </x-modal>
+
+                                            <x-modal id="edit-modal-{{ $row->id }}" method="put"
+                                                action="{{ route('movie.update', $row->id) }}">
+                                                <x-slot name="header">Edit {{ $row->name }} movie</x-slot>
                                                 <x-slot name="body">
                                                     @include('admin.forms.edit-movie')
                                                 </x-slot>
@@ -70,12 +84,12 @@
 
                                             <x-modal-delete id="delete-modal-{{ $row->id }}" method="delete"
                                                 action="{{ route('movie.destroy', ['movie' => $row->id]) }}">
-                                                <x-slot name="header">you will delete the movie {{$row->name}}, Are you
+                                                <x-slot name="header">you will delete the movie {{ $row->name }}, Are
+                                                    you
                                                     sure ??</x-slot>
                                                 <x-slot name="body">
                                                 </x-slot>
                                             </x-modal-delete>
-
                                     @endforeach
                                     </tr>
                                 </tbody>
