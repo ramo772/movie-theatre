@@ -45,7 +45,7 @@ You can now access the server at http://localhost:8000
 
 At the Welcome View you will found all movies which have events and showtime
 
-![image](https://user-images.githubusercontent.com/76254252/222986166-87a7d8cb-bf9e-4060-a42d-3a65ab606dbb.png)
+![image](https://user-images.githubusercontent.com/76254252/222987517-874a3cef-fbc6-4349-807b-ce0110dbdc99.png)
 
 
 Hit Register to create Admin account
