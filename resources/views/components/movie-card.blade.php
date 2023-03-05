@@ -5,7 +5,7 @@
         </a>
     </div>
     <div class="card-body pt-2">
-        <a href="javascript:;" class="card-title h5 d-flex justify-content-center text-darker">
+        <a href="javascript:;" class="card-title h6 d-flex justify-content-center text-darker">
             {{ $movie->name }}
         </a>
         <button type="button" class="btn btn-primary btn-lg w-100" data-bs-toggle="modal"
